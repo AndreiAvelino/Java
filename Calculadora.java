@@ -23,28 +23,28 @@ class Main {
         
         int resp;
         
-		System.out.println("MEMÓRIA: "+ mem); 
+	System.out.println("MEMÓRIA: "+ mem); 
 		
         System.out.println("1 - Somar");
-		System.out.println("2 - Subtrair");
-		System.out.println("3 - Multiplicar");
-		System.out.println("4 - Dividir");		    
-		System.out.println("5 - Zerar");
-		System.out.println("6 - Sair");
+	System.out.println("2 - Subtrair");
+	System.out.println("3 - Multiplicar");
+	System.out.println("4 - Dividir");		    
+	System.out.println("5 - Zerar");
+	System.out.println("6 - Sair");
 		
-		System.out.print("Opção: ");
-		resp = teclado.nextInt();
+	System.out.print("Opção: ");
+	resp = teclado.nextInt();
 		
-		return resp;
+	return resp;
 		
     }
     
     public static void VerificaOp(int resp, Scanner teclado){
 
         while (resp < 1 | resp > 6){
-		    System.out.print("OPÇÃO INVÁLIDA - Digite novamente: ");
-		    resp = teclado.nextInt();
-		} 
+		System.out.print("OPÇÃO INVÁLIDA - Digite novamente: ");
+		resp = teclado.nextInt();
+	} 
     }
     
     public static float VerificaValor(int resp, Scanner teclado){
@@ -57,9 +57,9 @@ class Main {
         while (resp == 4 & valor == 0) {
 	        System.out.print("VALOR INVÁLIDO PARA DIVISÃO - Digite novamente: ");
 	        valor = teclado.nextFloat();
-		}
+	}
 		
-		return valor;
+	return valor;
         
     }
     
@@ -67,20 +67,20 @@ class Main {
         
         switch(resp){
 		        
-		    case 1: mem += valor;
-		            break;
-		    case 2: mem -= valor;
-		            break;
-		    case 3: mem *= valor;
-		            break;
-		    case 4: mem /= valor;
-		            break;
-		    case 5: mem = 0;
-		            break;
-		    }
-
+		case 1: mem += valor;
+		        break;
+		case 2: mem -= valor;
+		        break;
+		case 3: mem *= valor;
+		        break;
+		case 4: mem /= valor;
+		        break;
+		case 5: mem = 0;
+		        break;
+	}
         
         return mem;
+    
     }
     
     public static void PulaLinha(){
@@ -97,8 +97,8 @@ class Main {
 		float valor = 0;
 		
 		do{
-            resp = Menu(mem, teclado);
-            PulaLinha();
+                    resp = Menu(mem, teclado);
+                    PulaLinha();
 		    VerificaOp(resp, teclado);
 
 		    if (resp <= 4){
@@ -106,11 +106,12 @@ class Main {
 		    }
 
 		    PulaLinha();
-    	    mem = FazConta(resp, valor, mem);
-     	    PulaLinha();
+    	    	    mem = FazConta(resp, valor, mem);
+     	            PulaLinha();
 
 		 
 		}while (resp != 6);
+		
 	}
 }
 
